@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strona Główna Zubek</title>
+    <style>
+        body {
+            display: flex;
+        }
+        #sidebar {
+            width: 200px;
+            padding: 10px;
+            background-color: #f1f1f1;
+        }
+        #sidebar a {
+            display: block;
+            margin: 5px 0;
+            color: blue;
+            text-decoration: none;
+        }
+        #content {
+            flex-grow: 1;
+            padding: 10px;
+        }
+        iframe {
+            width: 100%;
+            height: 500px;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="sidebar">
+        <a href="zadanie32_zube.html" target="content_frame">Zadanie 32</a>
+        <a href="zadanie33_zube.html" target="content_frame">Zadanie 33</a>
+        <a href="zadanie34_zube.html" target="content_frame">Zadanie 34</a>
+        <a href="zadanie35_zube.html" target="content_frame">Zadanie 35</a>
+        <a href="zadanie36_zube.html" target="content_frame">Zadanie 36</a>
+    </div>
+
+    <div id="content">
+        <iframe name="content_frame" src=""></iframe>
+    </div>
+</body>
+</html>
