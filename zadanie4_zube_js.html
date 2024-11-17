@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title> Zubek 3K</title>
+        <script language="JavaScript">
+            function WinOpen_z3_zubek() {
+                window.open("zadanie3_zube_js.html","okienko_z3","toolbar=no,directories=no,menubar=no,height=380,width=160,top=200,left=200");
+            }
+            function WinOpen_z4_zubek() {
+                window.open("zadanie4_zube_js_zewnetrzne.html","okienko_z4","toolbar=no,directories=no,menubar=no,height=1000,width=1000,top=1000,left=1000");
+            }
+            function okno_zamknij_zubek() {
+                window.close()
+            }
+        </script>
+    </head>
+    <body>
+        <script>
+            document.write("Szkielet zaliczeniowy JavaScript Jakub Zubek 3K".fontcolor("red").fontsize(12) +"<br>");
+        </script>
+        <form>
+            <input type="button_z3" name="zadanie3" value="zadanie3-Zubek" onclick="WinOpen_z3_zubek(' ')">
+            <input type="button_z4" name="zadanie4" value="zadanie4-Zubek" onclick="WinOpen_z4_zubek(' ')">
+            <input type="button" value="zamknij okno" onclick="okno_zamknij_zubek()"/>
+        </form>
+    </body>
+</html>
