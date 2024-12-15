@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title> Zubek 3K</title>
+    </head>
+    <body>
+        <div>
+            <script lang="JavaScript">
+                    let a_zube = Number.parseInt(prompt ("Podaj liczbe A: ", ""));
+                    let b_zube = Number.parseInt(prompt("Podaj liczbe B: ", ""));
+
+                    let fun1_zube = Math.pow(a_zube, 3);
+                    let fun2_zube = 3* (Math.pow(a_zube, b_zube))*b_zube;
+                    let fun3_zube = 3*(a_zube)*(Math.pow(b_zube, b_zube));
+                    let fun4_zube = Math.pow(b_zube, 3);
+
+                    document.write(`(${a_zube} + ${b_zube})^3=${a_zube}^3 + 3*((${a_zube})^${b_zube})*(${b_zube}) + `); 
+                    document.write(`3*(${a_zube})*((${b_zube})^${b_zube}) + ${b_zube}^3 = `);
+                    document.write(`${fun1_zube} + ${fun2_zube} + ${fun3_zube} + ${fun4_zube} = ${fun1_zube + fun2_zube + fun3_zube + fun4_zube}`);
+            </script>
+        </div>
+    </body>
+</html>
