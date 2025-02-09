@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="utf-8">
+    <title>Czterolistna koniczyna</title>
+    <script type="text/javascript">
+        function rysuj() {
+            var canvas = document.getElementById('obrazek');
+            if (canvas.getContext) {
+                var ctx = canvas.getContext('2d');
+                ctx.fillStyle = "green";
+                
+                function rysujListek(x, y, rotacja) {
+                    ctx.save();
+                    ctx.translate(x, y);
+                    ctx.rotate(rotacja);
+                    ctx.beginPath();
+                    ctx.moveTo(0, 0);
+                    ctx.bezierCurveTo(-30, -50, 30, -50, 0, 0);
+                    ctx.bezierCurveTo(-30, 50, 30, 50, 0, 0);
+                    ctx.closePath();
+                    ctx.fill();
+                    ctx.restore();
+                }
+                
+                rysujListek(150, 100, 0);
+                rysujListek(200, 150, Math.PI / 2);
+                rysujListek(150, 200, Math.PI);
+                rysujListek(100, 150, -Math.PI / 2);
+            }
+        }
+    </script>
+</head>
+<body onload="rysuj();">
+    <canvas id="obrazek" width="300" height="300" style="border:1px solid #000;">
+        Twoja przeglądarka nie wspiera Canvas!
+    </canvas>
+</body>
+</html>

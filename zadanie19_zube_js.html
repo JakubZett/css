@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="utf-8">
+    <title>Chevrony</title>
+    <script type="text/javascript">
+        function rysuj() {
+            var canvas = document.getElementById('obrazek');
+            if (canvas.getContext) {
+                var ctx = canvas.getContext('2d');
+                
+                // Czarne tło
+                ctx.fillStyle = 'black';
+                ctx.fillRect(40, 20, 180, 300);
+                
+                // Białe chevrony
+                ctx.strokeStyle = 'white';
+                
+                // Pierwszy chevron
+                ctx.beginPath();
+                ctx.moveTo(70, 200);
+                ctx.lineTo(130, 100);
+                ctx.lineTo(190, 200);
+                ctx.lineWidth = 20;
+                ctx.lineJoin = "miter";
+                ctx.stroke();
+                
+                // Drugi chevron
+                ctx.beginPath();
+                ctx.moveTo(70, 240);
+                ctx.lineTo(130, 140);
+                ctx.lineTo(190, 240);
+                ctx.lineWidth = 20;
+                ctx.lineJoin = "miter";
+                ctx.stroke();
+                
+                // Trzeci chevron
+                ctx.beginPath();
+                ctx.moveTo(70, 280);
+                ctx.lineTo(130, 180);
+                ctx.lineTo(190, 280);
+                ctx.lineWidth = 20;
+                ctx.lineJoin = "miter";
+                ctx.stroke();
+            }
+        }
+    </script>
+</head>
+<body onload="rysuj();">
+    <canvas id="obrazek" width="300" height="400" style="border:1px solid #000;">
+        Twoja przeglądarka nie wspiera Canvas!
+    </canvas>
+</body>
+</html>

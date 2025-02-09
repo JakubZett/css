@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="utf-8">
+    <title>Trzy krzyże</title>
+    <script type="text/javascript">
+        function rysuj() {
+            var canvas = document.getElementById('obrazek');
+            if (canvas.getContext) {
+                var ctx = canvas.getContext('2d');
+                
+                // Black cross
+                ctx.strokeStyle = 'black';
+                ctx.lineCap = 'butt';
+                ctx.lineWidth = 20;
+                ctx.beginPath();
+                ctx.moveTo(50, 30);
+                ctx.lineTo(50, 110);
+                ctx.moveTo(10, 70);
+                ctx.lineTo(90, 70);
+                ctx.stroke();
+                
+                // Green cross
+                ctx.strokeStyle = 'green';
+                ctx.lineCap = 'round';
+                ctx.lineWidth = 15;
+                ctx.beginPath();
+                ctx.moveTo(170, 30);
+                ctx.lineTo(170, 110);
+                ctx.moveTo(130, 70);
+                ctx.lineTo(210, 70);
+                ctx.stroke();
+                
+                // Cyan cross
+                ctx.strokeStyle = 'cyan';
+                ctx.lineCap = 'square';
+                ctx.lineWidth = 5;
+                ctx.beginPath();
+                ctx.moveTo(290, 30);
+                ctx.lineTo(290, 110);
+                ctx.moveTo(250, 70);
+                ctx.lineTo(330, 70);
+                ctx.stroke();
+            }
+        }
+    </script>
+</head>
+<body onload="rysuj();">
+    <canvas id="obrazek" width="400" height="150" style="border:1px solid #000;">
+        Twoja przeglądarka nie wspiera Canvas!
+    </canvas>
+</body>
+</html>

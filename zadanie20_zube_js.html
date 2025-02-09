@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="utf-8">
+    <title>Kwadrat z krzyżem</title>
+    <script type="text/javascript">
+        function rysuj() {
+            var canvas = document.getElementById('obrazek');
+            if (canvas.getContext) {
+                var ctx = canvas.getContext('2d');
+                
+                // Rysowanie kwadratu
+                ctx.beginPath();
+                ctx.moveTo(100, 100);
+                ctx.lineTo(300, 100);
+                ctx.lineTo(300, 300);
+                ctx.lineTo(100, 300);
+                ctx.closePath();
+                ctx.lineWidth = 20;
+                ctx.lineJoin = "round";
+                ctx.stroke();
+                
+                // Rysowanie krzyża
+                ctx.beginPath();
+                ctx.moveTo(100, 100);
+                ctx.lineTo(300, 300);
+                ctx.moveTo(300, 100);
+                ctx.lineTo(100, 300);
+                ctx.lineWidth = 20;
+                ctx.lineJoin = "round";
+                ctx.stroke();
+            }
+        }
+    </script>
+</head>
+<body onload="rysuj();">
+    <canvas id="obrazek" width="400" height="400" style="border:1px solid #000;">
+        Twoja przeglądarka nie wspiera Canvas!
+    </canvas>
+</body>
+</html>
