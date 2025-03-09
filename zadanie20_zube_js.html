@@ -1,41 +1,58 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <meta charset="utf-8">
-    <title>Kwadrat z krzyżem</title>
-    <script type="text/javascript">
-        function rysuj() {
-            var canvas = document.getElementById('obrazek');
-            if (canvas.getContext) {
-                var ctx = canvas.getContext('2d');
-                
-                // Rysowanie kwadratu
-                ctx.beginPath();
-                ctx.moveTo(100, 100);
-                ctx.lineTo(300, 100);
-                ctx.lineTo(300, 300);
-                ctx.lineTo(100, 300);
-                ctx.closePath();
-                ctx.lineWidth = 20;
-                ctx.lineJoin = "round";
-                ctx.stroke();
-                
-                // Rysowanie krzyża
-                ctx.beginPath();
-                ctx.moveTo(100, 100);
-                ctx.lineTo(300, 300);
-                ctx.moveTo(300, 100);
-                ctx.lineTo(100, 300);
-                ctx.lineWidth = 20;
-                ctx.lineJoin = "round";
-                ctx.stroke();
-            }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zadanie 20</title>
+    <script>
+        function distance(x1, y1, x2, y2) {
+            return Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+        }
+        
+        function AB_zub() {
+            let xa = parseFloat(document.getElementById('xa_zub').value);
+            let ya = parseFloat(document.getElementById('ya_zub').value);
+            let xb = parseFloat(document.getElementById('xb_zub').value);
+            let yb = parseFloat(document.getElementById('yb_zub').value);
+            document.getElementById('ab_result').innerText = distance(xa, ya, xb, yb).toFixed(2);
+        }
+
+        function BC_zub() {
+            let xb = parseFloat(document.getElementById('xb_zub').value);
+            let yb = parseFloat(document.getElementById('yb_zub').value);
+            let xc = parseFloat(document.getElementById('xc_zub').value);
+            let yc = parseFloat(document.getElementById('yc_zub').value);
+            document.getElementById('bc_result').innerText = distance(xb, yb, xc, yc).toFixed(2);
+        }
+
+        function AC_zub() {
+            let xa = parseFloat(document.getElementById('xa_zub').value);
+            let ya = parseFloat(document.getElementById('ya_zub').value);
+            let xc = parseFloat(document.getElementById('xc_zub').value);
+            let yc = parseFloat(document.getElementById('yc_zub').value);
+            document.getElementById('ac_result').innerText = distance(xa, ya, xc, yc).toFixed(2);
         }
     </script>
 </head>
-<body onload="rysuj();">
-    <canvas id="obrazek" width="400" height="400" style="border:1px solid #000;">
-        Twoja przeglądarka nie wspiera Canvas!
-    </canvas>
+<body>
+    <h2>Obliczanie długości boków trójkąta</h2>
+    <label>A(xa, ya):</label>
+    <input type="number" id="xa_zub" placeholder="xa">
+    <input type="number" id="ya_zub" placeholder="ya"><br>
+    <label>B(xb, yb):</label>
+    <input type="number" id="xb_zub" placeholder="xb">
+    <input type="number" id="yb_zub" placeholder="yb"><br>
+    <label>C(xc, yc):</label>
+    <input type="number" id="xc_zub" placeholder="xc">
+    <input type="number" id="yc_zub" placeholder="yc"><br>
+    
+    <button onclick="AB_zub()">Oblicz AB</button>
+    <span id="ab_result"></span><br>
+    
+    <button onclick="BC_zub()">Oblicz BC</button>
+    <span id="bc_result"></span><br>
+    
+    <button onclick="AC_zub()">Oblicz AC</button>
+    <span id="ac_result"></span><br>
 </body>
 </html>

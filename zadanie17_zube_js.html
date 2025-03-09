@@ -1,39 +1,64 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <meta charset="utf-8">
-    <title>Czterolistna koniczyna</title>
-    <script type="text/javascript">
-        function rysuj() {
-            var canvas = document.getElementById('obrazek');
-            if (canvas.getContext) {
-                var ctx = canvas.getContext('2d');
-                ctx.fillStyle = "green";
-                
-                function rysujListek(x, y, rotacja) {
-                    ctx.save();
-                    ctx.translate(x, y);
-                    ctx.rotate(rotacja);
-                    ctx.beginPath();
-                    ctx.moveTo(0, 0);
-                    ctx.bezierCurveTo(-30, -50, 30, -50, 0, 0);
-                    ctx.bezierCurveTo(-30, 50, 30, 50, 0, 0);
-                    ctx.closePath();
-                    ctx.fill();
-                    ctx.restore();
-                }
-                
-                rysujListek(150, 100, 0);
-                rysujListek(200, 150, Math.PI / 2);
-                rysujListek(150, 200, Math.PI);
-                rysujListek(100, 150, -Math.PI / 2);
-            }
-        }
-    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zubek_Zadanie17</title>
+    <style>
+        .wyroznienieCzerwone { color: red; font-weight: 600; }
+    </style>
 </head>
-<body onload="rysuj();">
-    <canvas id="obrazek" width="300" height="300" style="border:1px solid #000;">
-        Twoja przeglądarka nie wspiera Canvas!
-    </canvas>
+<body>
+    <h1>Zadanie 17 - Teoria JavaScript</h1>
+    
+    <h2>Pytania i odpowiedzi</h2>
+    <p><strong>1. Wymień cztery sposoby wyprowadzania danych w JS:</strong></p>
+    <ul>
+        <li><u>document.write()</u> - Wypisuje dane bezpośrednio w dokumencie HTML.</li>
+        <li><u>alert()</u> - Wyświetla dane w oknie alertu.</li>
+        <li><u>Wpisywanie do pól formularza</u> - Przekazywanie wartości do pól input.</li>
+        <li><u>Dodawanie do tabeli</u> - Wstawianie wartości do komórek tabeli.</li>
+    </ul>
+
+    <p><strong>2. Czym jest funkcja w JS?</strong></p>
+    <ul>
+        <li><u>Zbiór instrukcji</u> - Kod wykonywany po jej wywołaniu.</li>
+        <li><u>Może mieć argumenty</u> - Parametry przekazywane do funkcji.</li>
+        <li><u>Może zwracać wartość</u> - Używa słowa kluczowego return.</li>
+        <li><u>Można ją wielokrotnie używać</u> - Reużywalność kodu.</li>
+    </ul>
+
+    <p><strong>3. Omów metody dostępu do elementów:</strong></p>
+    <table border="1">
+        <tr>
+            <th>Metoda</th>
+            <th>Opis</th>
+        </tr>
+        <tr>
+            <td>getElementById("id")</td>
+            <td>Dostęp do elementu o konkretnym id.</td>
+        </tr>
+        <tr>
+            <td>getElementsByTagName("znacznik")</td>
+            <td>Dostęp do wszystkich elementów danego typu, np. "p".</td>
+        </tr>
+        <tr>
+            <td>getElementsByName("nazwa")</td>
+            <td>Dostęp do wszystkich elementów o danej nazwie.</td>
+        </tr>
+    </table>
+
+    <p><strong>4. Omów właściwości:</strong></p>
+    <ul>
+        <li><u>innerHTML</u> - Pozwala odczytać i modyfikować kod HTML w elemencie.</li>
+        <li><u>innerText</u> - Ustawia lub pobiera tekst w elemencie.</li>
+        <li><u>className</u> - Umożliwia zmianę klasy CSS elementu.</li>
+    </ul>
+
+    <div id="nazwa"></div>
+    <script>
+        document.getElementById("nazwa").innerHTML = "Witaj";
+        document.getElementById("nazwa").className = "wyroznienieCzerwone";
+    </script>
 </body>
 </html>

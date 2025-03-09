@@ -1,54 +1,32 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <meta charset="utf-8">
-    <title>Chevrony</title>
-    <script type="text/javascript">
-        function rysuj() {
-            var canvas = document.getElementById('obrazek');
-            if (canvas.getContext) {
-                var ctx = canvas.getContext('2d');
-                
-                // Czarne tło
-                ctx.fillStyle = 'black';
-                ctx.fillRect(40, 20, 180, 300);
-                
-                // Białe chevrony
-                ctx.strokeStyle = 'white';
-                
-                // Pierwszy chevron
-                ctx.beginPath();
-                ctx.moveTo(70, 200);
-                ctx.lineTo(130, 100);
-                ctx.lineTo(190, 200);
-                ctx.lineWidth = 20;
-                ctx.lineJoin = "miter";
-                ctx.stroke();
-                
-                // Drugi chevron
-                ctx.beginPath();
-                ctx.moveTo(70, 240);
-                ctx.lineTo(130, 140);
-                ctx.lineTo(190, 240);
-                ctx.lineWidth = 20;
-                ctx.lineJoin = "miter";
-                ctx.stroke();
-                
-                // Trzeci chevron
-                ctx.beginPath();
-                ctx.moveTo(70, 280);
-                ctx.lineTo(130, 180);
-                ctx.lineTo(190, 280);
-                ctx.lineWidth = 20;
-                ctx.lineJoin = "miter";
-                ctx.stroke();
-            }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zubek - Zadanie 19</title>
+</head>
+<body>
+    <h1>Wszystko o KWADRACIE</h1>
+    <label for="dlugosc">Podaj długość boku:</label>
+    <input type="text" id="dlugosc" placeholder="Podaj długość"> cm<br><br>
+    
+    <input type="button" value="Oblicz pole" onclick="pole_zubek()">
+    <input type="button" value="Oblicz obwód" onclick="obwod_zubek()">
+    
+    <div id="nazwa"></div>
+    
+    <script>
+        function pole_zubek() {
+            var a_zub = parseFloat(document.getElementById('dlugosc').value);
+            var b_zub = a_zub * a_zub;
+            document.getElementById("nazwa").innerHTML = "Pole kwadratu = " + b_zub.toFixed(2) + " cm²";
+        }
+        
+        function obwod_zubek() {
+            var a_zub = parseFloat(document.getElementById('dlugosc').value);
+            var b_zub = 4 * a_zub;
+            document.getElementById("nazwa").innerHTML = "Obwód kwadratu = " + b_zub.toFixed(2) + " cm";
         }
     </script>
-</head>
-<body onload="rysuj();">
-    <canvas id="obrazek" width="300" height="400" style="border:1px solid #000;">
-        Twoja przeglądarka nie wspiera Canvas!
-    </canvas>
 </body>
 </html>
